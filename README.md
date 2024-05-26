@@ -1,2 +1,1 @@
-# MatchMadness
-It is a spoof of duolingo match madness. 
+A clone of duolingo match madness game. 

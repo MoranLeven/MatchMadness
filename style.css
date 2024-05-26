@@ -1,0 +1,92 @@
+input{
+    width:200px;
+    margin: 4px;
+}
+.input{
+       all: unset;
+       display: inline-block;
+       padding-top: 15px;
+       padding-bottom: 15px;
+       padding-right: 15px;
+       padding-left: 15px;
+       color: white;
+       text-transform: uppercase;
+       font-family: sans-serif;
+       letter-spacing: 1.5px;
+       font-weight: bold;
+       cursor: pointer;
+       border-radius: 17px;
+       font-size: 16px;
+       background-color: #58cc02;
+       box-shadow: 0 5px 0 #58a700;
+       width: 200px ;
+       margin: 5px;
+       text-align: center;
+} 
+
+
+ .output{ 
+       all: unset;
+       display: inline-block;
+       padding-top: 15px;
+       padding-bottom: 15px;
+       padding-right: 15px;
+       padding-left: 15px;
+       color: white;
+       text-transform: uppercase;
+       font-family: sans-serif;
+       letter-spacing: 1.5px;
+       font-weight: bold;
+       cursor: pointer;
+       border-radius: 17px;
+       font-size: 16px;
+       background-color: #58cc02;
+       box-shadow: 0 5px 0 #58a700;
+       width: 200px ;
+       margin: 5px;
+       text-align: center;
+} 
+.score{
+       all: unset;
+       display: inline-block;
+       padding-top: 15px;
+       padding-bottom: 15px;
+       padding-right: 15px;
+       padding-left: 15px;
+       color: white;
+       text-transform: uppercase;
+       font-family: sans-serif;
+       letter-spacing: 1.5px;
+       font-weight: bold;
+       cursor: pointer;
+       border-radius: 17px;
+       font-size: 16px;
+       background-color: #58cc02;
+       box-shadow: 0 5px 0 #58a700;
+       width: 440px;
+       margin: 5px;
+       text-align: center;
+       transition-property: background-color, box-shadow;
+       transition-duration: 1s, 1s;
+       
+} 
+
+.score-updated{
+    background-color: aqua;
+    box-shadow: rgb(3, 88, 88);
+}
+
+.input_selected{
+    background-color: rgb(204, 23, 122);
+    box-shadow: 0 5px 0 rgb(155, 19, 94);
+}
+.output_selected{
+    background-color: rgb(52, 206, 198);
+    box-shadow: 0 5px 0 rgb(42, 168, 162);
+}
+
+.answered{
+    background-color : white;
+    box-shadow: 0 5px 0 white;
+    cursor:auto;
+}
