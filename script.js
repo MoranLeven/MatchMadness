@@ -58,8 +58,10 @@ function checkResult() {
       score += 1;
       console.log("🥳🥳Correct✔️");
       result = true;
+      updateWords();
     } else {
       score -= 1;
+
       console.log("😖😖Incorrect❌");
     }
 
@@ -134,3 +136,4 @@ outputs.forEach((oput) => {
 });
 
 wordUpdater.addEventListener("click", fillWords);
+fillWords();

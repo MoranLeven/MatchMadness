@@ -21,8 +21,6 @@ function pronounceInput() {
   //start with canceling the voice
   speechSynthesis.cancel();
   wordMsg.text = this.value;
-  wordMsg.rate = wordMsg.text.length > 10 ? 2 : 1;
-
   wordMsg.voice = spanish_voice;
   speechSynthesis.speak(wordMsg);
 }
@@ -30,7 +28,7 @@ function pronounceInput() {
 function pronounceOutput() {
   speechSynthesis.cancel();
   wordMsg.text = this.value;
-  wordMsg.rate = wordMsg.text.length > 10 ? 3 : 1;
+  wordMsg.rate = wordMsg.text.length > 10 ? 1.2 : 1;
   wordMsg.voice = english_voice;
   console.log(speechSynthesis.pending);
   speechSynthesis.speak(wordMsg);
