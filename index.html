@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+            
 </head>
 <body>
+    <canvas id="confetti-canvas"></canvas>
     <div class="container">
-        <input type="button" value="" class="input">
-        <input type="button" value="" class="output">
- 
-        <input type="button" value="" class="input" >
-        <input type="button" value="" class="output">
- 
-        <input type="button" value="" class="input">
-        <input type="button" value="" class="output">
-  
-        <input type="button" value="" class="input">
-        <input type="button" value="" class="output">
+        
+        <button class='input' id='confetti'></button>
+        <button class='output' id='confetti'></button>
 
-        <input type="button" value="" class="input">
-        <input type="button" value="" class="output">
+        <button class='input' id='confetti'></button>
+        <button class='output' id='confetti'></button>
+
+        <button class='input' id='confetti'></button>
+        <button class='output' id='confetti'></button>
+
+        <button class='input' id='confetti'></button>
+        <button class='output' id='confetti'></button>
+
+        <button class='input' id='confetti'></button>
+        <button class='output' id='confetti'></button>
+
     </div>
 
     <div>
@@ -32,8 +36,9 @@
         <button class="words-updater rem ">Fill Words</button>
         <button class="mute rem" onclick="mute()">🔇Mute</button>
     </div>
+    <script src="confetti.js"></script>
     <script src="words.js"></script>
-   <script  src="script.js"></script>
-   <script src="audio.js"></script>
+    <script  src="script.js"></script>
+    <script src="audio.js"></script>
 </body>
 </html>
