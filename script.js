@@ -9,28 +9,33 @@ const outputs = document.querySelectorAll(".output");
 const points = document.querySelector(".score");
 const wordsKeys = Object.keys(words);
 const wordUpdater = document.querySelector(".words-updater");
+
+
 function selectInput() {
-  if (!this.value) return;
+  if (!this.innerText) return;
   //handling the selection of input
   if (lastInput && lastInput != this) {
     lastInput.classList.remove("input_selected");
   }
 
-  input =
-    lastInput && input === this.value
-      ? undefined
-      : this.value === ""
-      ? undefined
-      : this.value;
+  input = lastInput && input === this.innerText ? undefined : this.innerText === ""  ? undefined  : this.innerText;
   lastInput = this;
 
   this.classList.toggle("input_selected");
 
-  console.log(input);
+  
+}
+
+function getRemainingInputOutput(){
+  let inputs = document.querySelectorAll('.input')
+  let outputs = document.querySelectorAll(".output")
+  let input = Array.from(inputs).reduce((acc,curr)=>acc + (1?!curr.innerText:0),0)
+  let output = Array.from(outputs).reduce((acc,curr)=>acc + (1?!curr.innerText:0),0)
+  return [input, output]
 }
 
 function selectOutput() {
-  if (!this.value) return;
+  if (!this.innerText) return;
   //handling the input
 
   //handling the selection of output
@@ -41,11 +46,11 @@ function selectOutput() {
   this.classList.toggle("output_selected");
 
   output =
-    lastOutput && output === this.value
+    lastOutput && output === this.innerText
       ? undefined
-      : this.value === ""
+      : this.innerText === ""
       ? undefined
-      : this.value;
+      : this.innerText;
 
   lastOutput = this;
   console.log(output);
@@ -54,14 +59,14 @@ function selectOutput() {
 function checkResult() {
   let result = false;
   if (input && output) {
-    if (words[input] === output) {
+    if (words[input.toLowerCase()].toLowerCase() === output.toLowerCase()) {
       score += 1;
       console.log("🥳🥳Correct✔️");
       result = true;
       updateWords();
+      addConfetti(this);
     } else {
       score -= 1;
-
       console.log("😖😖Incorrect❌");
     }
 
@@ -71,12 +76,18 @@ function checkResult() {
       lastOutput.classList.remove("output_selected");
       input = undefined;
       output = undefined;
-      // if (result) {
-      //   updateWords();
-      // }
     }, 400);
 
     updateScore(score);
+    
+    //if user have selected all the words refill them 
+    let inout = getRemainingInputOutput()
+    if (inout[0] === 5 && inout[1] ===5){
+      setTimeout(() => {
+        fillWords();
+      }, 300);
+    }
+    
   }
 }
 
@@ -87,8 +98,8 @@ function updateScore(score) {
 
 function updateWords() {
   let word = randomWord();
-  lastInput.value = word;
-  lastOutput.value = words[word];
+  lastInput.innerText = "";
+  lastOutput.innerText = "";
 }
 
 function randomWord() {
@@ -120,8 +131,8 @@ function fillWords() {
     int = Array.from(ints)[i];
     out = Array.from(outs)[i];
     word = Array.from(wrds)[i];
-    inputs[int].value = word;
-    outputs[out].value = words[word];
+    inputs[int].innerText = word;
+    outputs[out].innerText = words[word];
   }
 }
 

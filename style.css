@@ -1,3 +1,11 @@
+
+@keyframes bang {
+  from {
+    transform: translate3d(0,0,0);
+    opacity: 0.5;
+  }
+}
+
 html{
     margin-left: 20%;
     margin-right: 20%;
@@ -100,4 +108,19 @@ html{
 .output_selected{
     background-color: rgb(52, 206, 198);
     box-shadow: 0 5px 0 rgb(42, 168, 162);
+}
+
+
+#confetti {
+  position: relative;
+  i {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 0;
+    width: 3px;
+    height: 8px;
+    background: red;
+    opacity: 0;
+  }
 }
